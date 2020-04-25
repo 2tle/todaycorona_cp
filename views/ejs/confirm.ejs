@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>코로나 종합 시스템</title>
+	<link rel='stylesheet' href='css/style.css' />
+	<link rel='stylesheet' href='css/bootstrap.css' />
+	<link rel='stylesheet' href='css/bootstrap.min.css' />
+	<link rel='stylesheet' href='css/w3.css' />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src='js/jquery-3.4.1.slim.min.js'></script>
+	<script src='js/bootstrap.js'></script>
+	<style>
+		body {
+			font-family: "Lato", sans-serif
+		}
+
+		.mySlides {
+			display: none
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<!-- Navbar -->
+	<div class="w3-top">
+		<div class="w3-bar w3-black w3-card">
+			<a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu">
+				<i class="fa fa-bars"></i>
+			</a>
+			<a href="https://todaycorona-tjkwi.run.goorm.io" class="w3-bar-item w3-button w3-padding-large">홈</a>
+			<a href="/confirm" class="w3-bar-item w3-button w3-padding-large w3-hide-small">확진자</a>
+			<a href="/mask" class="w3-bar-item w3-button w3-padding-large w3-hide-small">마스크</a>
+			<a href="/news" class="w3-bar-item w3-button w3-padding-large w3-hide-small">현황</a>
+			<div class="w3-dropdown-hover w3-hide-small">
+				<button class="w3-padding-large w3-button" title="More">추가정보
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="w3-dropdown-content w3-bar-block w3-card-4">
+					<a href="#" class="w3-bar-item w3-button">계절별 질병</a>
+					<a href="#" class="w3-bar-item w3-button">예방접종</a>
+					<a href="#" class="w3-bar-item w3-button">몰랑</a>
+				</div>
+			</div>
+			<a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right">
+				<i class="fa fa-search"></i>
+			</a>
+		</div>
+	</div>
+
+	<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+	<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+		<a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">홈</a>
+		<a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">확진자</a>
+		<a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">마스크</a>
+		<a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">현황</a>
+	</div>
+
+	<!-- Page content -->
+	<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+		<div id="circle1">
+			<div style= "font-size: 15px">
+			<a>확진자</a>
+			<a id='accure'></a>
+			</div>
+		</div>
+
+		<div id="circle1" style = "background-color: lightgreen">
+			<div style= "font-size: 15px">
+			완치자
+		<a id='complete'> </a>
+			</div>
+		</div>
+		<div id="circle1" style = "background-color: yellow">
+			<div style= "font-size: 15px">
+			치료중:
+		<a id='care'> </a>
+			</div>
+		</div>
+		<div id="circle1" style = "background-color: pink">
+			<div style= "font-size: 15px">
+			사망자:
+		<a id='die'> </a>
+			</div>
+		</div>
+
+		
+		
+
+		<!-- End Page Content -->
+	</div>
+
+	<script>
+		window.onload = function() {
+			getCovData();
+		};
+
+		function getCovData() {
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'https://todaycorona-tjkwi.run.goorm.io/request/todaycorona');
+			xhr.setRequestHeader('Content-Type', 'application/json');
+			xhr.send();
+			xhr.addEventListener('load', function() {
+				console.log(xhr.responseText);
+				var tmp = JSON.parse(xhr.responseText);
+				document.getElementById('accure').innerHTML = tmp.accrue+" "+tmp.accrue1;
+				document.getElementById('complete').innerHTML = tmp.complete+" "+tmp.complete1;
+				document.getElementById('care').innerHTML = tmp.care+" "+tmp.care1;
+				document.getElementById('die').innerHTML = tmp.die+" "+tmp.die1;
+			});
+		}
+		// Automatic Slideshow - change image every 4 seconds
+		var myIndex = 0;
+		carousel();
+
+		function carousel() {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			myIndex++;
+			if (myIndex > x.length) {
+				myIndex = 1
+			}
+			x[myIndex - 1].style.display = "block";
+			setTimeout(carousel, 4000);
+		}
+		// Used to toggle the menu on small screens when clicking on the menu button
+		function myFunction() {
+			var x = document.getElementById("navDemo");
+			if (x.className.indexOf("w3-show") == -1) {
+				x.className += " w3-show";
+			} else {
+				x.className = x.className.replace(" w3-show", "");
+			}
+		}
+	</script>
+
+</body>
+
+</html>

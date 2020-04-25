@@ -1,0 +1,73 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+body {
+	font: 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+a {
+	color: #00b7ff;
+} /* Style the header */
+#circle1 {
+	background-color: #86efef;
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 12px;
+	vertical-align: middle;
+	line-height: 150px;
+}
+#circle2 {
+	background-color: #0009;
+	width: 100px;
+	height: 100px;
+	border-radius: 75px;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 12px;
+	color: #fff;
+	vertical-align: middle;
+	line-height: 100px;
+}
+.header {
+	padding-bottom: 10px;
+	text-align: left;
+	margin: 20px auto;
+	font-size: 50px;
+	font-weight: bold;
+}
+.catebutton {
+	width: 50px;
+	height: 50px;
+	float: right;
+}
+@media screen and (max-width: 800px) {
+	.remote {
+		display: none;
+	}
+}
+.paragragh {
+	margin-top: 50px;
+	font-size: 40px;
+	text-align: left;
+	font-weight: bold;
+	margin-left: 20px;
+}
+.Fline {
+	margin-bottom: 15px;
+	margin-top: 15px;
+	border-bottom: 2px solid lightgray;
+}
+.cates {
+	text-align: left;
+	font-size: 20px;
+	margin-left: 10px;
+	font: 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+.textcontent {
+	font-size: 20px;
+	font: 'Lucida Grande', Helvetica, Arial, sans-serif;
+}

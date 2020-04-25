@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="naver-site-verification" content="6213c19772b3d4563730a8a1b63febf6f02f8be7" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>코로나 종합 시스템</title>
+	<link rel='stylesheet' href='css/style.css' />
+	<link rel='stylesheet' href='css/bootstrap.css' />
+	<link rel='stylesheet' href='css/bootstrap.min.css' />
+	<link rel='stylesheet' href='css/w3.css' />
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+	<link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/bigfoot-default.css" />
+	<link rel="stylesheet" href="css/bigfoot-number.css" />
+	<script src='js/jquery-3.4.1.slim.min.js'></script>
+	<script src='js/bootstrap.js'></script>
+	<script type="text/javascript" src="js/bigfoot.js"></script>
+	<script type="text/javascript" src="//use.typekit.net/wpc5dha.js"></script>
+	<script type="text/javascript">
+		try {
+			Typekit.load();
+		} catch (e) {}
+	</script>
+	<style>
+		body {
+			font-family: "Lato", sans-serif
+		}
+
+		.mySlides {
+			display: none
+		}
+	</style>
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50" style="background-color: #F8F8FF;">
+	<!-- Navbar -->
+	<div class="w3-top">
+		<div class="w3-bar w3-black w3-card">
+			<a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu">
+				<i class="fa fa-bars"></i>
+			</a>
+			<a href="https://todaycorona-tjkwi.run.goorm.io" class="w3-bar-item w3-button w3-padding-large">홈</a>
+			<a href="/confirm" class="w3-bar-item w3-button w3-padding-large w3-hide-small">확진자</a>
+			<a href="/mask" class="w3-bar-item w3-button w3-padding-large w3-hide-small">마스크</a>
+			<a href="/news" class="w3-bar-item w3-button w3-padding-large w3-hide-small">현황</a>
+			<div class="w3-dropdown-hover w3-hide-small">
+				<button class="w3-padding-large w3-button" title="More">추가정보
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="w3-dropdown-content w3-bar-block w3-card-4">
+					<a href="#" class="w3-bar-item w3-button">계절별 질병</a>
+					<a href="#" class="w3-bar-item w3-button">예방접종</a>
+					<a href="#" class="w3-bar-item w3-button">몰랑</a>
+				</div>
+			</div>
+			<a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right">
+				<i class="fa fa-search"></i>
+			</a>
+		</div>
+	</div>
+	<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+	<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+		<a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">홈</a>
+		<a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">확진자</a>
+		<a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">마스크</a>
+		<a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">현황</a>
+	</div>
+	<div class="remote">
+
+		<!-- 중간 무빙 리모컨-->
+		<nav class="navbar bg-light" style="position:absolute;position:fixed;border:solid 1px;left:30px;top:300px">
+			<ul class="navbar-nav">
+				<a style="text-align:center;font-size:30px;margin-left: 20px;margin-right: 20px">목차 리모컨</a>
+				<li class="nav-item">
+					<a class="nav-link" href="#Top">처음</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#sec1">개요</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#sec2">증상</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#sec3">예방법</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#sec4">치료법</a>
+				</li>
+
+			</ul>
+		</nav>
+
+	</div>
+	<!-- 메인 중간 컨테이너 시작-->
+	<div class="mquery">
+		<div id="Top" class="container p-3 my-3 border" style="background-color: white;">
+			<!-- Page content -->
+			<div id="wrapper">
+				<div class="w3-content" src="image/list.png" style="max-width:2000px;margin-top:0px;">
+					<div style="float:right">
+						<button data-toggle="collapse" data-target="#demo" style="background:white;border: none;color-background:white">
+							<img src="image/list.png" class="catebutton" alt="카테고리 접기/펼치기" style="-webkit-background-color:white">
+						</button>
+					</div>
+					<div class="header">
+						<a>코로나 바이러스</a>
+					</div>
+					<div id="demo" class="collapse" style="text-align: center">
+						<div class="row w3-padding w3-margin-bottom">
+
+							<div class="col-12 w3-padding-16" style="background-color: #DEDEDE;border: 1.5px solid gray;border-bottom: 0.75px solid gray;">
+								<button data-toggle="collapse" data-target="#demo2" style="background:white;border: none;background-color:#DEDEDE">
+									<a style="font-size:20px;">질병</a>
+								</button>
+								<div class="collapse" id="demo2">
+									<div class="row w3-padding">
+
+										<div class="col-12 w3-padding-16" style="background-color:#F2F2F2;border: 1.5px solid gray;border-bottom: 0.75px solid gray;">
+											<button data-toggle="collapse" data-target="#demo3" style="background:white;border: none;background-color:#F2F2F2">
+												<a style="font-size:20px;">바이러스</a>
+											</button>
+											<div class="collapse" id="demo3">
+												<div class="row w3-padding">
+													<div class="col-6 w3-padding-16" style="background-color:white;border: 1px solid gray;border-right: 0.5px solid gray;">
+														질병1
+													</div>
+													<div class="col-6 w3-padding-16" style="background-color:white;border: 1px solid gray;">
+														질병2
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 w3-padding-16" style="background-color:#F2F2F2;border: 1.5px solid gray;">
+											<a style="font-size:20px;">세균</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-sm-12 w3-padding-16" style="background-color: #DEDEDE;border: 1.5px solid gray;">
+								<a style="font-size:20px;">건강 위해 요소</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="container p-3 my-3 border" style="background-color: white;width: 200px;align-content: left;margin:0;margin-bottom:344px;">
+
+						<a style="font-size:28px;margin:0px;">
+							<p>목차</p>
+						</a>
+						<div class="cates">
+
+							<a href=#sec1 class="text-primary">1. 개요
+								<br>
+							</a>
+							<a href=#sec2 class="text-primary">2. 증상
+								<br>
+							</a>
+							<a href=#sec3 class="text-primary">3. 예방법
+								<br>
+							</a>
+							<a href=#sec4 class="text-primary">4. 치료법
+								<br>
+							</a>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- 본문 내용-->
+				<div class="paragragh">
+					<a id="sec1">개요</a>
+				</div>
+				<div class="Fline"></div>
+				<div class="textcontent">
+					코로나바이러스는 아데노바이러스·리노바이러스와 함께 사람에게 감기를 일으키는 3대 바이러스 중 하나로, 사람과 다양한 동물에 감염될 수 있는 유전자 크기 27~32kb의 RNA 바이러스이다. 전자현미경으로 봤을 때 바이러스 입자 표면이 돌기처럼 튀어나와 있는데 이 모양이 마치 왕관처럼 생겼다고 해서 라틴어로 왕관을 뜻하는 'Corona'에서 파생돼 명명됐다. 주로 추운 겨울철에 발생하는 성인 감기의 10~30%를 차지하며, 두통이나 인후통·기침을
+					동반한 코감기를 주 증상으로 한다.
+
+					<div class="paragragh">
+						<a id="sec2">증상</a>
+					</div>
+					<div class="Fline"></div>
+					<div class="textcontent">
+						발열, 권태감, 기침, 호흡곤란 및 폐렴, 급성호흡곤란증후군 등 다양하게 경증에서 중증까지 호흡기감염증이 나타남 드물게는 객담, 인후통, 두통, 객혈과 오심, 설사도 나타남. 치사율 자체는 낮은 편이다.
+						<sup>
+							<a href="#fn:1" id="fnref:1">1</a>
+							<div class="footnotes">
+								<hr>
+								<ol>
+									<li class="footnote" id="fn:1">
+										<p>
+											<!--주석 내용-->
+											치사율이 높진 않지만, 면역력이 약한 노인분들, 어린 아이들에게는 치명적일 수 있으니 조심하도록 하자
+											<a href="#fnref:1" title="return to article" class="reversefootnote">&#160;&#8617;</a>
+										</p>
+									</li>
+								</ol>
+							</div>
+						</sup>
+					</div>
+					<!--한 묶음-->
+					<div class="paragragh">
+						<a id="sec3">예방법</a>
+					</div>
+					<div class="Fline"></div>
+					<div class="textcontent">
+						백신은 따로 없다고 한다. 올바른 손씻기를 실천하는것이 가장 좋은 방법이다.
+						<li>흐르는 물에 비누로 30초 이상 손씻기</li>
+						<li>외출 후, 배변 후, 식사 전·후, 기저귀 교체 전·후, 코를 풀거나 기침, 재채기 후 등 실시</li>
+						또한 기침 예절을 준수하는 것이 예방하는데 도움을 준다.
+						<li>기침할 때는 휴지나 옷소매 위쪽으로 입과 코를 가리고 하기</li>
+						<li>호흡기 증상이 있는 경우 마스크 착용</li>
+						씻지 않은 손으로 눈, 코, 입을 만지지 않아야 한다.
+					</div>
+					<!---->
+					<div class="paragragh">
+						<a id="sec4">치료법</a>
+					</div>
+					<div class="Fline"></div>
+					<div class="textcontent">
+						대증 치료 : 수액 보충, 해열제 등 보존적 치료 특이적인 항바이러스제 없음. 일단 그냥 걸리면 최대한 건강을 유지하는 방법 밖에는 없다. 치료제 혹은 예방주사가 개발되고 있다고는 하나, 실질적으로 쓰이기 전에 사태가 종결될것 같다.
+					</div>
+
+				</div>
+
+				<!-- End Page Content -->
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+
+		var bigfoot = $.bigfoot()
+		window.addEventListener('message', function(event) {
+			$('body').attr('data-footnote-style', event.data);
+			bigfoot.updateSetting('positionContent', event.data !== 'bottom');
+		});
+		// Automatic Slideshow - change image every 4 seconds
+		var myIndex = 0;
+		carousel();
+
+		function carousel() {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			myIndex++;
+			if (myIndex > x.length) {
+				myIndex = 1
+			}
+			x[myIndex - 1].style.display = "block";
+			setTimeout(carousel, 4000);
+		}
+		// Used to toggle the menu on small screens when clicking on the menu button
+		function myFunction() {
+			var x = document.getElementById("navDemo");
+			if (x.className.indexOf("w3-show") == -1) {
+				x.className += " w3-show";
+			} else {
+				x.className = x.className.replace(" w3-show", "");
+			}
+		}
+		// When the user clicks anywhere outside of the modal, close it
+		var modal = document.getElementById('ticketModal');
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+
+</body>
+
+</html>
